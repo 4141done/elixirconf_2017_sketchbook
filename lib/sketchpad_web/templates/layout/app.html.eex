@@ -21,6 +21,12 @@
       </main>
 
     </div> <!-- /container -->
+    <script type="text/javascript">
+      // Reference to the assigns binding directly since some pages will not have the user_id key assigned.  Phoenix will complain but it's better this way
+      window.username = "<%= assigns[:user_id] %>"
+      window.userToken = "<%= assigns[:user_token] %>"
+      window.userColor = "<%= assigns[:user_color] %>"
+    </script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
